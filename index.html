@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forge: connect Manipur's MSMEs with faculty expertise</title>
+  <meta name="description" content="Search registered MSMEs in Manipur by what they make or do, and find faculty whose specialisation can help them.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23232E78'/%3E%3Cpath fill='%23E8662A' d='M16 5l3 8h8l-6.500 5 2.500 8.500L16 21l-7 5.500L11.500 18 5 13h8z'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="selvedge" aria-hidden="true"></div>
+
+  <header class="top">
+    <div class="wrap top-in">
+      <a class="brand" href="#" aria-label="Forge home">
+        <svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="#232E78"/><path fill="#E8662A" d="M14 4.500l2.600 7h7l-5.700 4.300 2.200 7.400L14 18.800l-6.100 4.400 2.200-7.400-5.700-4.300h7z"/></svg>
+        <span>Forge</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#about">How it works</a>
+        <a href="#data">About the data</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>Where Manipur's workshops meet campus expertise.</h1>
+      <p class="lede" id="lede">Search registered MSMEs by what they make or do, or find faculty whose specialisation can help them.</p>
+
+      <div class="panel" id="panel">
+        <div class="tabs" role="tablist" aria-label="What are you looking for?">
+          <button role="tab" id="tab-biz" aria-selected="true" aria-controls="out" data-mode="biz">
+            <span class="t-main">Find businesses</span>
+            <span class="t-sub">I'm faculty or a researcher</span>
+          </button>
+          <button role="tab" id="tab-fac" aria-selected="false" aria-controls="out" data-mode="fac">
+            <span class="t-main">Find faculty</span>
+            <span class="t-sub">I run an MSME</span>
+          </button>
+        </div>
+
+        <div class="searchrow">
+          <svg class="s-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.500" cy="10.500" r="6.500" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.500 15.500L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <label for="q" class="sr">Search</label>
+          <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="wool, garment, chemical…">
+          <button id="clear" class="clear" type="button" aria-label="Clear search" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <div class="quick" id="quick" aria-label="Example searches"></div>
+        <div class="filters" id="filters"></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap" id="out" role="tabpanel" tabindex="-1">
+    <noscript><p class="note">Forge needs JavaScript to search the directory.</p></noscript>
+    <div id="results"></div>
+  </main>
+
+  <section class="about wrap" id="about">
+    <h2>How it works</h2>
+    <div class="about-grid">
+      <div>
+        <h3>If you teach or research</h3>
+        <p>Type what you need, such as wool, bamboo, a chemical or a food product. Forge searches what each registered business actually does and shows which districts have them.</p>
+      </div>
+      <div>
+        <h3>If you run a business</h3>
+        <p>Type a skill or a problem, such as machine learning, IoT, marketing or finance. You get faculty with that specialisation, with their official email and profile.</p>
+      </div>
+      <div>
+        <h3>Suggested matches</h3>
+        <p>Open <b>Who can help</b> on any business to see faculty whose expertise fits its sector. These are suggestions based on sector and specialisation, not endorsements.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot" id="data">
+    <div class="wrap">
+      <p id="datanote"></p>
+      <p class="small">Business details come from public Udyam MSME registrations. Faculty details come from official institutional directories. Forge shows only what those sources publish.</p>
+    </div>
+  </footer>
+
+  <dialog id="help" aria-labelledby="help-title">
+    <div class="dlg-in">
+      <button class="dlg-x" id="help-x" aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div id="help-body"></div>
+    </div>
+  </dialog>
+
+  <script src="assets/taxonomy.js"></script>
+  <script src="data/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
